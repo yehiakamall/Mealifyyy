@@ -1,0 +1,682 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+
+
+}
+
+/* start navbar section  */
+
+.nav{
+    width: 100%;
+    background-color: #ffffff;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */  
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 1000;
+    
+}
+.nav li{
+    list-style: none;
+}
+.nav a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #7f7f90;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+.nav a:hover{
+    color: #000;
+}
+.links .home- a{
+    color: black;
+    border-bottom: 3px solid #ce1212;
+    
+   
+}
+.nav .logo{
+    font-size: 2rem;
+    font-weight: 600;
+    
+}
+.nav .links{
+    display: flex;
+    gap: 20px;
+}
+.underline-left {
+    position: relative;
+    display: inline-block;
+}
+
+/* the under line effect  */
+.underline-left::after {
+    content: '';
+    margin-top: 4px;
+    position: absolute;
+    width: 100%;
+    height: 3px; /* Height of the underline */
+    bottom: 0;
+    top: 22px;
+    left: 0;
+    background-color: #ce1212; /* Color of the underline */
+    transform: scaleX(0); /* Start the animation from 0 (hidden) */
+    transform-origin: left; /* Animate from left to right */
+    transition: transform 0.4s ease-in-out; /* Duration of the animation */
+}
+
+.underline-left:hover::after {
+    transform: scaleX(1); /* Show the underline */
+}
+.toogle-btn{
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+@media (max-width :1200px){
+    .nav .links{
+        display: none;
+    }
+    .nav .toogle-btn{
+        display: block;
+    }
+}
+
+/* dropdown menu  */
+.drop-down {
+    position: relative;
+    
+    
+}
+
+.drop-down .drop-menu {
+    position: absolute;
+    right: 2rem;
+    top: 80px;
+    width: 40%;
+   background-color: #ffffff;
+    backdrop-filter:blur(15px) ;
+    border-radius: 10px;
+    height: 500px;
+    z-index: 999;
+    opacity: 0;
+}
+
+.drop-down .drop-menu li{
+    list-style: none;
+    margin-top: 30px;
+    margin-left: 20px;
+    
+}
+
+.drop-menu a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #7f7f90;
+    font-weight: 500;
+    padding-bottom: 4px;
+}
+.drop-menu a:hover{
+    color: #000;
+}
+
+/* END navbar section  */
+/* start header section  */
+
+.home{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 50px 8% 0;
+    background-color: #eeeeee;
+    
+}
+.home-content h2{
+    font-size: 40px;
+    font-family: cursive;
+    padding-bottom: 20px;
+}
+.home-content p{
+    margin-top: 15px;
+    line-height: 25px;
+    color: #594f5a;
+    font-size: 18px;
+}
+.home-content button{
+    margin-top: 30px;
+    padding-right: 25px;
+   margin-right: 15px;
+   width: 150px;
+   height: 40px;
+}
+.f-btn{
+    background-color: #ce1212;
+    border: none;
+    border-radius: 0 100px 100px 100px;
+    color: #ffffff;
+    padding: 10px;
+}
+:hover.f-btn{
+    background-color: #e64848;
+    cursor: pointer;
+}
+.s-btn{
+    border: none;
+    font-size: 16px;
+    margin-left: 50px;
+}
+.second-btn{
+    margin-left: 15px;
+    position: relative;
+    border-top-left-radius:  100px; /* Make the top-left corner rounded */
+    border-top-right-radius: 100px; /* Make the top-right corner rounded */
+    
+}
+:hover.second-btn{
+    color: #cf1212;
+    cursor: pointer;
+}
+:hover.s-btn{
+    color: #e64848;
+    cursor: pointer;
+}
+.second-btn i{
+    z-index: 99999;
+  width: 40px;
+  height: 20px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 100px 100px 100px 100px;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left:-5%;
+
+}
+.second-btn::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color:#ffffff;
+    border-radius: 50%;
+    top: 70%;
+    left:5%;
+    margin-right: 50px;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    
+  }
+  .second-btn::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px; /* Full height of the container */
+    border-radius: 50%;
+    background-color: #cf1212;
+     left: -10%;
+     top: 34%;
+  }
+  .home img{
+    width: 40%;
+    filter: drop-shadow(15px 15px  15px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s;
+  }
+  .home .img-:hover{
+    animation: shake 1s infinite;
+  }
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+/* END header section  */
+/* start  Our Proffesional Chefs section  */
+
+.p-Chefs{
+    margin-top: 80px;
+    position: relative;
+}
+.p-text{
+    text-align: center;
+    
+}
+.p-text .f-p{
+    color: #7f7f90;
+    font-size: 20px;
+
+}
+.p-text .s-p{
+    font-family: cursive;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 80px;
+}
+
+.card{
+    width:27%;
+    float: left;
+    margin: 10px;
+    margin-left: 4%;
+    text-align: center;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.1);
+   margin-top: 90px;
+    border-radius: 10px 10px;
+    height:90%;
+    position: relative;
+    overflow: hidden;
+   
+}
+.card-i{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    background-color: #dddde6;
+    width: 50px;
+    height:150px;
+    border-radius: 10px 10px;
+    transform: translatex(150%);
+    transition: transform 1s;
+}
+
+.card-i ul{
+    list-style: none;
+}
+.card-i i{
+    margin-top: 15px;
+    color: #7f7f90;
+    
+}
+.card-i i:hover{
+    color: #000;
+}
+.card img{
+    width: 100%;
+
+}
+.clr{
+    clear: both;
+}
+.p-Chefs .card h2{
+    margin-top: 20px;
+}
+.p-Chefs .card p {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #7f7f90;
+}
+.card  {
+
+    border-radius: 10px;
+    transition: transform 0.7s ease; 
+  }
+
+  :hover.card {
+    transform: scale(1.1); 
+
+  }
+  :hover.card .card-i{
+    transform: translate(0);
+  }
+/* END Our Proffesional Chefs section  */
+
+/* start Check Our Gallery section  */
+
+
+.gallery-container{
+    background-color: #eeeeee;
+    margin-top: 80px;
+    overflow: auto;
+   
+}
+.gallery-text{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+.gallery-container h2{
+    margin-top: 10px;
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+}
+.gallery{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    margin-left: 8%;
+    margin-bottom: 100px;
+}
+.gallery img{
+    width: 450px;
+    margin-top: 2px;
+    margin-right: 15px;
+    
+}
+.item-1{
+    position: relative;
+    overflow: hidden;
+
+}
+
+.first-caption{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+     top: 0;
+    left: 0;
+    right:0%;
+    bottom: -100%;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition:all 1s ;
+    transform: translatey(100%);
+
+}
+.item-1 img{
+    transition: transform 1s;
+}
+
+:hover.item-1 .first-caption{
+    opacity: 1;
+    bottom: 0;
+    top: 0;
+    transform: translatey(0);
+
+
+}
+:hover.item-1 img{
+    transform: scale(1.1,1.1);
+}
+
+.first-caption h3{
+    margin-top: 30%;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* END Check Our Gallery section  */
+
+
+
+/* START  Need Help ? Contact Us  */
+
+.container{
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+}
+.container h3{
+    font-size: 30px;
+    margin-top: 15px;
+    font-weight: 100;
+    font-family: "Amatic SC", sans-serif;
+}
+.map{
+    width:100% ;
+
+}
+
+.map iframe{
+    width: 80%;
+    margin-top: 40px;
+
+}
+.contact-uss{
+    /* background-color: teal; */
+    height: 300px;
+    /* display: flex; */
+    margin-top: 10px;
+ 
+    
+}
+.contact-main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+
+}
+
+.contact-main .contactt{
+    width: 40%;
+    background-color: #f5f5f5;
+    /* margin: 30px; */
+    margin-top: 30px;
+    margin-right: 20px;
+    height: 100px;
+    display: flex;
+    padding: 30px;
+  
+}
+
+.contactt i{
+    /* color: #ce1212; */
+    font-size: 20px;
+    margin-right: 20px;
+    
+}
+.cotent-us{
+    margin-left: 15px;
+}
+.cotent-us h3{
+    padding-bottom: 8px;
+    font-size: 20px;
+    color: #a3b6c1;
+}
+/* end Need Help ? Contact Us  */
+.icon-button {
+    background-color: #d32f2f;  
+    border-radius: 50%; 
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;  
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  
+}
+.icon-button i{
+    padding-left: 20px;
+}
+
+
+
+.contact-input{
+    width: 80%;
+    margin: auto;
+    padding: 15px;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.1);
+    
+
+}
+.f-input{
+    display: flex;
+    
+}
+.f-input .s-input{
+    margin-left: 20px;
+}
+
+.f-input input{
+    width: 90%;
+    margin: auto;
+    
+}
+.s-input{
+    margin-left: 20px;
+}
+input{
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #a3b6c1;
+    outline: none;
+    overflow: auto;
+    
+}
+input:focus{
+    border: 3px solid #d32f2f;
+  }
+textarea:focus{
+    border: 3px solid #d32f2f;
+  }
+.input-3{
+    width: 100%;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    outline: none;
+    padding: 15px;
+}
+.contact-input .buttonss{
+    position: relative;
+    /* background-color: #000; */
+    height: 100px;
+
+}
+.buttons{
+    position: absolute;
+    right: 46%;
+    top: 20%;
+    border-radius: 10px 10px;
+    width: 150px;
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+}
+:hover.buttons{
+    background-color: #e64848;
+}
+
+/* end Need Help ? Contact Us  */
+
+/* start footer section  */
+footer{
+    background-color: #040304;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    /* height: 200px; */
+}
+.footer-1 h2{
+    font-size: 30px;
+    margin-top: 20px;
+    color: #fff;
+}
+.footer-1 p{
+    color: #fff;
+    margin-top: 15px;
+    font-size: 18px;
+}
+.footer-1 h3{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.footer-1 ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.footer-1 ul a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+.footer-2 h2{
+    font-size: 22px;
+    margin-top: 20px;
+    color: #fff;
+    word-spacing: 3px;
+}
+.footer-2{
+    margin-bottom: 50px;
+}
+.footer-2 p{
+    color: #fff;
+    margin-top: 15px;
+}
+.footer-2 input{
+    
+    margin-top: 15px;
+    width: 100%;
+    height: 0px;
+}
+.footer-2 h3{
+    color: #fff;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.footer-2 .foot-ul{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 70%;
+
+}
+.footer-2 .foot-ul ul{
+    list-style: none;
+}
+.footer-2 .foot-ul li{
+    margin-top: 10px;
+    color: #fff;
+}
+.footer-2 .foot-ul a{
+    /* margin-top: 10px; */
+    color: #fff;
+    text-decoration: none;
+}
+.footer-2 .foot-ul li i{
+    margin-right:10px;
+}
+.footer-2 .foot-ul li:hover{
+    background-color: rgba(97, 94, 94, 0.451);
+    margin-left: 15px;
+    width: 100%;
+}
+.footer3 h2{
+    font-size: 24px;
+    margin-top: 20px;
+    color: #fff;
+}
+.footer3 p{
+    font-size: 15px;
+    margin-top: 20px;
+    color: #fff;
+}
+.footer3 p i{
+    margin-right: 10px;
+    color: #cf1212;
+    font-size: 20px;
+}
+
+
+/* END footer section  */
